@@ -16,6 +16,8 @@
     new WOW().init();
 
 
+    
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -35,10 +37,15 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 500, 'easeInOutExpo');
         return false;
     });
-
+    
+    window.scrollToElement = function (id) {
+        var element = document.getElementById(id);
+        console.log(id);
+        element.scrollIntoView({behavior: "smooth"});
+    }
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
@@ -56,6 +63,62 @@
         dots: true,
         items: 1,
         dotsData: true,
+    });
+
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay: true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+
+    /* for contact */
+
+    const form = document.getElementById('frm-contact');
+    const submitBtn = document.getElementById('btn-submit');
+
+    submitBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+        // Obtiene los datos del formulario y los convierte en un objeto
+        const formData = new FormData(form);
+        const data = {};
+        for (const [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+        document.getElementById("content-spinner").style.display = "block";
+        // Envía los datos del formulario al servidor usando Axios
+        axios.post('/contact', data)
+            .then(response => {
+            // Maneja la respuesta del servidor en caso de éxito
+                document.getElementById("content-spinner").style.display = "none";
+                Swal.fire({
+                    icon: 'success',
+                    html: 'Gracias por contactarnos. <br> Tu correo ha sido enviado con éxito y nos pondremos en contacto contigo lo antes posible. <br>  <br> ¡Que tengas un gran día!',
+                    confirmButtonText: 'Aceptar'
+                })
+            })
+            .catch(error => {
+                document.getElementById("content-spinner").style.display = "none";
+                // Maneja la respuesta del servidor en caso de error
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ups...',
+                    text: 'Revisar los campos obligatorios',
+                    confirmButtonText: 'Aceptar'
+                })
+            });
     });
 
 
@@ -95,4 +158,3 @@
     });
     
 })(jQuery);
-

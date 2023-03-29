@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Solartec - Renewable Energy Website Template</title>
+    <title>.:: Servicios | Grupo TIM ::.</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    
+    <meta name="description" content="Grupo TIM es una empresa en Mérida Yucatán que ofrece una variedad de servicios tecnológicos, incluyendo mantenimiento de computadoras, instalación de paneles solares y cámaras de seguridad CCTV. Nuestro objetivo es brindar soluciones personalizadas y de calidad a hogares y empresas. Contáctenos para obtener una cotización personalizada." />
+    <meta name="keywords" content="mantenimiento de computadoras, reparación de computadoras, instalación de paneles solares, cámaras de seguridad, CCTV, tecnología, hogares, empresas, Mérida Yucatán" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -28,8 +29,10 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/app.css" rel="stylesheet">
 
+
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    {!! NoCaptcha::renderJs() !!}
 </head>
 
 <body>
@@ -41,52 +44,27 @@
     </div>
     <!-- Spinner End -->
 
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>123 Street, New York, USA</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+012 345 6789</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
+    <div id="inicio"></div>
 
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <h2 class="m-0 text-primary">Solartec</h2>
+            <h2 class="m-0 text-primary">
+                <img src="{{ asset('img/logo-grupotim.png') }}" alt="">
+            </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="project.html" class="nav-item nav-link">Project</a>
-                <div class="nav-item dropdown">
+                <a href="#" onclick="scrollToElement('inicio')" class="nav-item nav-link">INICIO</a>
+                <a   onclick="scrollToElement('servicios')" class="nav-item nav-link cursor">SERVICIOS</a>
+                <a href="#" class="nav-item nav-link cursor">BLOG</a>
+                <a  onclick="scrollToElement('clientes')" class="nav-item nav-link cursor">CLIENTES</a>
+                <a  onclick="scrollToElement('contacto')" class="nav-item nav-link cursor">CONTACTO</a>
+               {{--  <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="feature.html" class="dropdown-item">Feature</a>
@@ -95,10 +73,8 @@
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div> --}}
             </div>
-            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -157,54 +133,46 @@
     <!-- Feature Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+            <div class="row g-5 justify-content-center">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex align-items-center mb-4">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
-                            <i class="fa fa-users text-white"></i>
+                            <i class="fas fa-desktop text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">3453</h1>
+                        <h6 class="mb-0" data-toggle="">COMPUTACIÓN</h6>
                     </div>
-                    <h5 class="mb-3">Happy Customers</h5>
-                    <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
+                    <h5 class="mb-3"></h5>
+                    <span>Lo que necesites en instalación de servidores, servicio de mantenimiento preventivo y correctivo, hosting y diseño de páginas web, redes y reparación de computadoras.</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                     <div class="d-flex align-items-center mb-4">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
-                            <i class="fa fa-check text-white"></i>
+                            <i class="fas fa-solar-panel text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">4234</h1>
+                        <h6 class="mb-0" data-toggle="">PANELES SOLARES</h6>
                     </div>
-                    <h5 class="mb-3">Project Done</h5>
-                    <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
+                    <h5 class="mb-3"></h5>
+                    <span>El sol es una fuente inagotable de energía, úsala de forma confiable y sencilla en tu hogar o negocio, refleja el ahorro en tu consumo de energía eléctrica y contribuye al cuidado ambiental.</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="d-flex align-items-center mb-4">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
-                            <i class="fa fa-award text-white"></i>
+                            <i class="fas fa-video text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">3123</h1>
+                        <h6 class="mb-0" data-toggle="">CÁMARAS DE SEGURIDAD CCTV</h6>
                     </div>
-                    <h5 class="mb-3">Awards Win</h5>
-                    <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
+                    <h5 class="mb-3"></h5>
+                    <span>Un circuito cerrado de cámaras es necesario para supervisar tu hogar o negocio. La seguridad de tus seres querido y de tus bienes al alcance de tus manos. Te asesoramos.</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="btn-lg-square bg-primary rounded-circle me-3">
-                            <i class="fa fa-users-cog text-white"></i>
-                        </div>
-                        <h1 class="mb-0" data-toggle="counter-up">1831</h1>
-                    </div>
-                    <h5 class="mb-3">Expert Workers</h5>
-                    <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
-                </div>
+               
             </div>
         </div>
     </div>
     <!-- Feature Start -->
+    <div id="servicios"></div>
 
-
-    <!-- About Start -->
+    <!-- paneles -->
+    <h2 class="text-primary text-center">PANELES SOLARES</h2>
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -213,329 +181,165 @@
                         <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg-6 about-text wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
-                        <h6 class="text-primary">About Us</h6>
-                        <h1 class="mb-4">25+ Years Experience In Solar & Renewable Energy Industry</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Diam dolor diam ipsum</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                        <a href="" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Explore More</a>
+                        
+                        <h1 class="mb-4">más de 15 años de experiencia en la industria de la energía solar renovable</h1>
+                      
+                        <p>
+                            La energía solar es una fuente de energía limpia que se puede transformar en energía eléctrica. ¿Cómo podemos aprovecharla? Por medio de paneles fotovoltaicos
+                        </p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>los paneles solares pueden ahorrar dinero en la factura de electricidad.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i> La energía solar es una forma limpia y renovable de producir energía. La energía solar no produce emisiones de gases de efecto invernadero ni otros contaminantes atmosféricos.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>Durabilidad: Los paneles solares son duraderos y pueden durar hasta 25 años o más con un mantenimiento adecuado.</p>
+                        <a href="" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
+    <!-- computacion -->
+    <h2 class="text-primary text-center">COMPUTACIÓN</h2>
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+               
+                <div class="col-lg-6 about-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <h6 class="text-primary"></h6>
+                        <h1 class="mb-4">Tecnología al servicio de tu tranquilidad: Soluciones informáticas profesionales</h1>
+                      
+                        <p>
+                            ¿Está buscando soluciones informáticas confiables para actualizar sus equipos y resolver problemas de hardware, software, virus o spyware? En nuestros servicios de computación, contamos con un equipo de profesionales capacitados para brindarle la mejor atención técnica.
+                        </p>
+                        
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>Ahorro de costos: Al invertir en soluciones informáticas profesionales, los clientes pueden ahorrar tiempo y dinero a largo plazo al evitar problemas costosos causados ​​por hardware o software obsoletos o infectados con virus o spyware.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i> Nuestro enfoque en proporcionar soluciones rápidas y efectivas significa que nuestros clientes pueden sentirse seguros de que sus necesidades serán atendidas de manera profesional y confiable.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>nuestros clientes pueden estar seguros de que sus problemas serán resueltos de manera oportuna y eficiente. Esto significa que pueden volver a enfocarse en sus actividades diarias sin perder tiempo o energía en resolver problemas técnicos.</p>
+                        <a href="" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/computer.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{-- camaras de seguridad --}}
 
+    <h2 class="text-primary text-center">SEGURIDAD</h2>
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/camera.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        
+                        <h1 class="mb-4">Maximice la seguridad y mejore el servicio con un CCTV personalizado para su negocio o local</h1>
+                      
+                        <p>
+                            Un circuito cerrado de televisión o CCTV es una solución de seguridad y vigilancia esencial para todo tipo de negocios y locales. Nuestros sistemas personalizados pueden adaptarse a las necesidades específicas de cada cliente, ya sea para mejorar la seguridad, la vigilancia o el servicio al cliente. 
+                        </p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i> Ofrecemos sistemas de CCTV personalizados para satisfacer las necesidades específicas de su negocio o local.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i> Experiencia en seguridad y vigilancia: Contamos con profesionales altamente capacitados y con experiencia en seguridad y vigilancia para proporcionar soluciones confiables y eficientes.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>Un CCTV puede ayudar a prevenir pérdidas en su negocio o local al disuadir a los delincuentes y detectar actividades sospechosas.</p>
+                        <a href="" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="text-primary">Our Services</h6>
-                <h1 class="mb-4">We Are Pioneers In The World Of Renewable Energy</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-1.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-solar-panel fa-3x"></i>
-                            </div>
-                            <h4 class="mb-3">Solar Panels</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-2.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-wind fa-3x"></i>
-                            </div>
-                            <h4 class="mb-3">Wind Turbines</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-3.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-lightbulb fa-3x"></i>
-                            </div>
-                            <h4 class="mb-3">Hydropower Plants</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-solar-panel fa-3x"></i>
-                            </div>
-                            <h4 class="mb-3">Solar Panels</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-5.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-wind fa-3x"></i>
-                            </div>
-                            <h4 class="mb-3">Wind Turbines</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
-                        <div class="position-relative p-4 pt-0">
-                            <div class="service-icon">
-                                <i class="fa fa-lightbulb fa-3x"></i>
-                            </div>
-                            <h4 class="mb-3">Hydropower Plants</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   
+    {{-- clientes --}}
+    <div id="clientes"></div>
+    <h2 class="text-primary text-center">CLIENTES</h2>
+    
+    <div class="owl-carousel owl-theme owl-clients">
+        <div class="item"><h4><img src="/img/clients/grupotim-aditimber.jpg?text=1" class="linkopacity1"></h4></div>
+        <div class="item"><h4> <img src="/img/clients/grupotim-crit.jpg?text=2" class="linkopacity1"></h4></div>
+        <div class="item"><h4> <img src="/img/clients/grupotim-andymaq.jpg?text=3" class="linkopacity1"></h4></div>
+        <div class="item"><h4><img src="/img/clients/grupotim-montessori.jpg?text=4" class="linkopacity1"></h4></div>
+        <div class="item"><h4><img src="/img/clients/grupotim-xaze.jpg?text=5" class="linkopacity1"></h4></div>
+        <div class="item"><h4><img src="/img/clients/grupotim.jpg?text=6" class="linkopacity1"></h4></div>
     </div>
-    <!-- Service End -->
 
-
-    <!-- Feature Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container feature px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <h6 class="text-primary">Why Choose Us!</h6>
-                        <h1 class="mb-4">Complete Commercial & Residential Solar Systems</h1>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-check text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Quality</p>
-                                        <h5 class="mb-0">Services</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-user-check text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Expert</p>
-                                        <h5 class="mb-0">Workers</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-drafting-compass text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Free</p>
-                                        <h5 class="mb-0">Consultation</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="btn-lg-square bg-primary rounded-circle">
-                                        <i class="fa fa-headphones text-white"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="mb-0">Customer</p>
-                                        <h5 class="mb-0">Support</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
+    {{-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fs-5 text enc_servicio">
+        <section class="regular slider">
+            <div>
+               <img src="/img/clients/grupotim-aditimber.jpg?text=1" class="linkopacity1">
             </div>
-        </div>
-    </div>
-    <!-- Feature End -->
-
-
-    <!-- Projects Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="text-primary">Our Projects</h6>
-                <h1 class="mb-4">Visit Our Latest Solar And Renewable Energy Projects</h1>
+            <div>
+             <img src="/img/clients/grupotim-crit.jpg?text=2" class="linkopacity1">
             </div>
-            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-12 text-center">
-                    <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">All</li>
-                        <li class="mx-2" data-filter=".first">Solar Panels</li>
-                        <li class="mx-2" data-filter=".second">Wind Turbines</li>
-                        <li class="mx-2" data-filter=".third">Hydropower Plants</li>
-                    </ul>
-                </div>
+            <div>
+              <img src="/img/clients/grupotim-andymaq.jpg?text=3" class="linkopacity1">
             </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Solar Panels</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-5.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Wind Turbines</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Hydropower Plants</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-3.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Solar Panels</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-2.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Wind Turbines</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-1.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="img/img-600x400-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Hydropower Plants</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
+            <div>
+              <img src="/img/clients/grupotim-montessori.jpg?text=4" class="linkopacity1">
             </div>
-        </div>
-    </div>
-    <!-- Projects End -->
+            <div>
+              <img src="/img/clients/grupotim-xaze.jpg?text=5" class="linkopacity1">
+            </div>  
+        
+            <div>
+              <img src="/img/clients/grupotim.jpg?text=6" class="linkopacity1">
+            </div>  
+          </section>
+    </div> --}}
 
-
+    <div id="contacto"></div>
     <!-- Quote Start -->
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="">
+                        {{-- <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt=""> --}}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.75949071340358!2d-89.5785236611863!3d21.026609212423974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56772de31410af%3A0xd725e9f4ce547824!2stim%20Reparaci%C3%B3n%20Computadoras!5e0!3m2!1ses-419!2smx!4v1629747477196!5m2!1ses-419!2smx" class="w-100 h-100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
-                        <h6 class="text-primary">Free Quote</h6>
-                        <h1 class="mb-4">Get A Free Quote</h1>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <form>
+                        <h1 class="mb-4">¡Contáctanos!</h1>
+                        <p class="mb-4 pb-2">Si necesita ayuda con nuestros servicios de mantenimiento de computadoras, instalación de paneles solares o cámaras de seguridad CCTV, contáctenos. Complete el formulario de contacto, llámenos o envíenos un correo electrónico. Nos aseguramos de brindar una atención personalizada y de calidad a nuestros clientes.</p>
+                        <p class="text-small text-success">Los campos marcados con * y el captcha son obligatorios</p>
+                        <form id="frm-contact">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" placeholder="*Nombre" name="nombre" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" placeholder="*Email" name="email" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
+                                    <input type="text" class="form-control border-0" placeholder="Teléfono" name="telefono" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
+                                    <input type="text" class="form-control border-0" placeholder="*Asunto" name="asunto" style="height: 55px;" required>
                                 </div>
+                               
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button>
+                                    <textarea class="form-control border-0" placeholder="Mensaje" name="mensaje" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    {!! NoCaptcha::display() !!}
+                                </div>
+                                <div class="col-12 text-center mt-3" id="content-spinner"  style="display: none;">
+                                    <div class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                      </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-success rounded-pill py-3 px-5" type="submit" id="btn-submit">Enviar</button>
                                 </div>
                             </div>
                         </form>
@@ -547,189 +351,43 @@
     <!-- Quote End -->
 
 
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="text-primary">Team Member</h6>
-                <h1 class="mb-4">Experienced Team Members</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="d-flex">
-                            <img class="img-fluid w-75" src="img/team-1.jpg" alt="">
-                            <div class="team-social w-25">
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h5>Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="d-flex">
-                            <img class="img-fluid w-75" src="img/team-2.jpg" alt="">
-                            <div class="team-social w-25">
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h5>Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded overflow-hidden">
-                        <div class="d-flex">
-                            <img class="img-fluid w-75" src="img/team-3.jpg" alt="">
-                            <div class="team-social w-25">
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h5>Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h6 class="text-primary">Testimonial</h6>
-                <h1 class="mb-4">What Our Clients Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-1.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-2.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <div class="testimonial-img position-relative">
-                        <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-3.jpg">
-                        <div class="btn-square bg-primary rounded-circle">
-                            <i class="fa fa-quote-left text-white"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-text text-center rounded p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Address</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                <div class="col-12 col-md-4 text-white align-self-center">
+                    <h5 class="text-white mb-4">Dirección</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>
+                        Calle 18 No. 346 Local 5 por 1-A y 1-B
+                        Fracc. Vista Alegre Norte, CP. 97130
+                        Mérida, Yucatán
+                    </p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                <div class="col-12 col-md-4 text-white align-self-center">
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>999 156 72 24</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ventas@grupotim.mx</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Project Gallery</h5>
-                    <div class="row g-2">
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-4.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-5.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded" src="img/gallery-6.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Newsletter</h5>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
+                
+                <div class="col-12 col-md-4 align-self-center">
+                    
+                    
+                   <div class="text-end col-12">
+                       <h5 class="text-white mb-4">Solicite información sin compromiso
+                        
+                    </h5> 
+                        
+                   </div>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container text-white">
             <div class="copyright">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                    <div class="col-md-12 text-center mb-3 mb-md-0">
+                        &copy; <a href="#"> Grupo TIM</a>, Derechos reservados.
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -738,7 +396,12 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    
+    {{-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle btn-to-whats"><i class="bi bi-arrow-up"></i></a> --}}
+    
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=529991567224&amp;text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20" class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 py-2" style="z-index: 1000;">
+        <i class="fab fa-whatsapp text-white fa-2x"></i>
+      </a>
 
 
     <!-- JavaScript Libraries -->
@@ -751,6 +414,8 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

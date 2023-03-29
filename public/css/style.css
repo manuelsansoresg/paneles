@@ -1,8 +1,8 @@
 /********** Template CSS **********/
 :root {
-    --primary: #32C36C;
+    --primary: #07B764;
     --light: #F6F7F8;
-    --dark: #1A2A36;
+    --dark: #2D4978;
 }
 
 .fw-medium {
@@ -18,6 +18,20 @@
 }
 
 .back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+
+
+.btn-to-whats {
     position: fixed;
     display: none;
     right: 45px;
