@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Grupo TIM',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '',
+    'logo_img' => '',
     'logo_img_class' => 'brand-image img-circle elevation-3',
-    'logo_img_xl' => null,
+    'logo_img_xl' => '/img/logoonlytransparent.png',
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'TIM',
 
     /*
     |--------------------------------------------------------------------------
@@ -84,13 +84,13 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => '/img/logo-grupotim.png',
             'alt' => 'Auth Logo',
             'class' => '',
-            'width' => 50,
-            'height' => 50,
+            /* 'width' => 50,
+            'height' => 50, */
         ],
     ],
 
@@ -291,31 +291,31 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+       /*  [
             'type'         => 'navbar-search',
             'text'         => 'search',
             'topnav_right' => true,
-        ],
+        ], */
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
-        [
+       /*  [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
+        ], */
+       /*  [
+            'text' => 'Banner',
+            'url'  => 'admin/banner',
             'can'  => 'manage-blog',
-        ],
+        ], */
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Banner',
+            'url'         => 'admin/banner',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            /* 'label'       => 4, */
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
@@ -421,7 +421,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -465,13 +465,23 @@ return [
                 ],
             ],
         ],
-        'Sweetalert2' => [
-            'active' => false,
+        'Moment' => [
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
+                ],
+            ],
+        ],
+        'Sweetalert2' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@10',
                 ],
             ],
         ],
@@ -487,6 +497,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        
+        'Admin' => [
+            'active' => true,
+            'files' => [
+               /*  [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',
+                ], */
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/js/admin_app.js',
                 ],
             ],
         ],
