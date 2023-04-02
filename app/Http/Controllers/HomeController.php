@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Mail\EmailContact;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -22,6 +23,12 @@ class HomeController extends Controller
             return view('home');
         }
         return view('home_admin');
+    }
+
+    public function welcome()
+    {
+        $banners = Banner::getActives();
+        return view('welcome', compact('banners'));
     }
 
     public function contact(ContactRequest $request)

@@ -26,13 +26,14 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/app.css" rel="stylesheet">
+    
 
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     {!! NoCaptcha::renderJs() !!}
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/app.css" rel="stylesheet">
 </head>
 
 <body>
@@ -83,21 +84,23 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-1.jpg'>">
-                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+            @foreach ($banners as $banner)
+            <div class="owl-carousel-item position-relative" data-dot="<img src='/banners/{{ $banner->image }}'>">
+                <img class="img-fluid" src="/banners/{{ $banner->image }}" alt="">
                 <div class="owl-carousel-inner">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
-                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
+                               {{--  <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-2.jpg'>">
+            @endforeach
+           {{--  <div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-2.jpg'>">
                 <img class="img-fluid" src="img/carousel-2.jpg" alt="">
                 <div class="owl-carousel-inner">
                     <div class="container">
@@ -124,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- Carousel End -->
@@ -260,41 +263,27 @@
     <!-- Service Start -->
    
     {{-- clientes --}}
-    <div id="clientes"></div>
-    <h2 class="text-primary text-center">CLIENTES</h2>
     
-    <div class="owl-carousel owl-theme owl-clients">
-        <div class="item"><h4><img src="/img/clients/grupotim-aditimber.jpg?text=1" class="linkopacity1"></h4></div>
-        <div class="item"><h4> <img src="/img/clients/grupotim-crit.jpg?text=2" class="linkopacity1"></h4></div>
-        <div class="item"><h4> <img src="/img/clients/grupotim-andymaq.jpg?text=3" class="linkopacity1"></h4></div>
-        <div class="item"><h4><img src="/img/clients/grupotim-montessori.jpg?text=4" class="linkopacity1"></h4></div>
-        <div class="item"><h4><img src="/img/clients/grupotim-xaze.jpg?text=5" class="linkopacity1"></h4></div>
-        <div class="item"><h4><img src="/img/clients/grupotim.jpg?text=6" class="linkopacity1"></h4></div>
+    
+    <div class="bg-white">
+        <div id="clientes"></div>
+        <h2 class="text-primary text-center py-4">CLIENTES</h2>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="owl-carousel owl-theme owl-clients">
+                        <div class="item"><h4><img src="/img/clients/grupotim-aditimber.jpg?text=1" class="linkopacity1"></h4></div>
+                        <div class="item"><h4> <img src="/img/clients/grupotim-crit.jpg?text=2" class="linkopacity1"></h4></div>
+                        <div class="item"><h4> <img src="/img/clients/grupotim-andymaq.jpg?text=3" class="linkopacity1"></h4></div>
+                        <div class="item"><h4><img src="/img/clients/grupotim-montessori.jpg?text=4" class="linkopacity1"></h4></div>
+                        <div class="item"><h4><img src="/img/clients/grupotim-xaze.jpg?text=5" class="linkopacity1"></h4></div>
+                        <div class="item"><h4><img src="/img/clients/grupotim.jpg?text=6" class="linkopacity1"></h4></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    {{-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fs-5 text enc_servicio">
-        <section class="regular slider">
-            <div>
-               <img src="/img/clients/grupotim-aditimber.jpg?text=1" class="linkopacity1">
-            </div>
-            <div>
-             <img src="/img/clients/grupotim-crit.jpg?text=2" class="linkopacity1">
-            </div>
-            <div>
-              <img src="/img/clients/grupotim-andymaq.jpg?text=3" class="linkopacity1">
-            </div>
-            <div>
-              <img src="/img/clients/grupotim-montessori.jpg?text=4" class="linkopacity1">
-            </div>
-            <div>
-              <img src="/img/clients/grupotim-xaze.jpg?text=5" class="linkopacity1">
-            </div>  
-        
-            <div>
-              <img src="/img/clients/grupotim.jpg?text=6" class="linkopacity1">
-            </div>  
-          </section>
-    </div> --}}
 
     <div id="contacto"></div>
     <!-- Quote Start -->

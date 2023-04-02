@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -43,6 +44,14 @@ class Banner extends Model
                 $get_banner->update();
             }
         }
+    }
+
+    public static function getActives()
+    {
+        $now = date('Y-m-d'); // Obtenemos la fecha actual
+        return Banner::where('date_init', '>=', $now)
+                ->where('date_fin', '>=', $now)
+                ->get();
     }
 
     public static function deleteImage($banner)
