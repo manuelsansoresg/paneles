@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Lib\Banxico;
 use App\Mail\EmailContact;
 use App\Models\Banner;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class HomeController extends Controller
 
     public function welcome()
     {
+        $banxico = new Banxico();
         $banners = Banner::getActives();
         return view('welcome', compact('banners'));
     }

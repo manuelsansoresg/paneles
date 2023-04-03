@@ -23,4 +23,7 @@ Route::post('/contact', [App\Http\Controllers\HomeController::class, 'contact'])
 Route::prefix('admin')->group(function () {
     Route::resource('banner', 'App\Http\Controllers\Admin\BannerController');
     Route::get('/banner/img/{banner}/delete', [App\Http\Controllers\Admin\BannerController::class, 'deleteImage']);
+
+    Route::resource('product', 'App\Http\Controllers\Admin\ProductController');
+    Route::get('/product/img/{banner}/delete', [App\Http\Controllers\Admin\ProductController::class, 'deleteImage']);
 });

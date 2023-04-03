@@ -49,9 +49,9 @@ class Banner extends Model
     public static function getActives()
     {
         $now = date('Y-m-d'); // Obtenemos la fecha actual
-        return Banner::where('date_init', '>=', $now)
-                ->where('date_fin', '>=', $now)
-                ->get();
+        return Banner::where('date_init', '<=', $now)
+        ->where('date_fin', '>=', $now)
+        ->get();
     }
 
     public static function deleteImage($banner)
