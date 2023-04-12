@@ -315,7 +315,12 @@ return [
             'text'        => 'Banner',
             'url'         => 'admin/banner',
             'icon'        => 'far fa-fw fa-file',
-            /* 'label'       => 4, */
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Productos',
+            'url'         => 'admin/product',
+            'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],

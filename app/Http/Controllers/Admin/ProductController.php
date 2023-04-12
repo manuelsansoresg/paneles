@@ -15,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::get();
+        return view('admin/product/list', compact('products'));
     }
 
     /**
@@ -25,7 +26,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $product_id = null;
+        $product = null;
+        return view('admin/product/form', compact('product_id', 'product'));
     }
 
     /**
@@ -36,7 +39,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::saveEdit($request);
     }
 
     /**
@@ -58,7 +61,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $product_id = $product->id;
+        return view('admin/product/form', compact('product_id', 'product'));
     }
 
     /**
@@ -70,7 +75,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Product::saveEdit($request);
     }
 
     public function deleteImage(Product $product)

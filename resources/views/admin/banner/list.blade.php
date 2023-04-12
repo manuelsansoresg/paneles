@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-body">
                  
-                    <table id="example" class="display" style="width:100%">
+                    <table id="dt-banner" class="display" style="width:100%">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -45,7 +45,7 @@
                                    <td> {{ $banner->date_fin }}</td>
                                    <td> 
                                     <a href="/admin/banner/{{ $banner->id}}/edit" class="btn btn-primary btn-sm">Editar</a>        
-                                    <a class="btn btn-danger btn-sm" style="cursor: pointer;">Eliminar</a>        
+                                    <a href="/admin/banner/{{ $banner->id}}/delete" class="btn btn-danger btn-sm" style="cursor: pointer;">Eliminar</a>        
                                 </td>
                             </tr>
                                 @endforeach

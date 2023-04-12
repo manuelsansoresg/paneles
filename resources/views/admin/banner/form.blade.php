@@ -67,7 +67,7 @@
                                 <input type="text" class="form-control" name="data[url]">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Description</label>
+                                <label for="exampleInputEmail1">Descripción</label>
                                 <textarea name="data[observation]" id="" cols="30" rows="4" class="form-control">{{ ($banner != null) ? $banner->observation : null }}</textarea>
                             </div>
                             <div class="form-group">
