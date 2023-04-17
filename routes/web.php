@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/paneles', [App\Http\Controllers\HomeController::class, 'paneles'])->name('paneles');
+
 Route::post('/contact', [App\Http\Controllers\HomeController::class, 'contact']);
 
 Route::prefix('admin')->group(function () {
@@ -26,6 +28,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/banner/{banner}/delete', [App\Http\Controllers\Admin\BannerController::class, 'destroy']);
 
     Route::resource('product', 'App\Http\Controllers\Admin\ProductController');
-    Route::get('/product/img/{banner}/delete', [App\Http\Controllers\Admin\ProductController::class, 'deleteImage']);
-    Route::get('/banner/img/{banner}/delete', [App\Http\Controllers\Admin\ProductController::class, 'destroy']);
+    Route::get('/product/img/{product}/delete', [App\Http\Controllers\Admin\ProductController::class, 'deleteImage']);
+    Route::get('/product/{product}/delete', [App\Http\Controllers\Admin\ProductController::class, 'destroy']);
 });

@@ -61,6 +61,10 @@
                                 <input type="text" class="form-control" name="data[name]"  placeholder="Escriba el nombre del producto" value="{{ ($product != null) ? $product->name : null }}" required>
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Descripción corta</label>
+                                <textarea name="data[description_short]" id="" cols="30" rows="4" class="form-control">{{ ($product != null) ? $product->description_short : null }}</textarea>
+                            </div> 
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Descripción</label>
                                 <textarea name="data[description]" id="" cols="30" rows="4" class="form-control">{{ ($product != null) ? $product->description : null }}</textarea>
                             </div> 

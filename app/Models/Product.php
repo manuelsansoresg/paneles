@@ -13,9 +13,11 @@ class Product extends Model
         'image',
         'code',
         'name',
+        'description_short',
         'description',
         'moneda_id',
         'price',
+        'val_dolar',
         'observations',
         'type',
         'status',
@@ -47,9 +49,13 @@ class Product extends Model
         }
     }
 
-    public static function getActives()
+    public static function getActives($type = null)
     {
-        return Product::where('status', 1)->get();
+        $product = Product::where('status', 1);
+        if ($type != null) {
+            $product->where('type', $type);
+        }
+        return $product->get();
     }
 
     public static function deleteImage($product)

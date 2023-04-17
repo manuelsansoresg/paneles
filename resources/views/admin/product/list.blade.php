@@ -44,7 +44,7 @@
                                    <td>{{ $product->id }}</td>
                                    <td> {{ $product->code }} </td>
                                    <td> {{ $product->name }} </td>
-                                   <td> {{ $product->price }} </td>
+                                   <td> {{ $product->price  / 100 }} </td>
                                    <td> {{ config('enums.moneda')[$product->moneda_id] }}</td>
                                    <td> {{ $product->price / 100 }}</td>
                                    <td> {{ $product->created_at }}</td>
