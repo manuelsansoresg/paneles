@@ -60,7 +60,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="#" onclick="scrollToElement('inicio')" class="nav-item nav-link">INICIO</a>
+                <a href="/" onclick="scrollToElement('inicio')" class="nav-item nav-link">INICIO</a>
                 <a   onclick="scrollToElement('servicios')" class="nav-item nav-link cursor">SERVICIOS</a>
                 <a href="#" class="nav-item nav-link cursor">BLOG</a>
                 <a  onclick="scrollToElement('clientes')" class="nav-item nav-link cursor">CLIENTES</a>
