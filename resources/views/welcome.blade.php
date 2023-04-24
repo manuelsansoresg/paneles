@@ -139,7 +139,7 @@
                         <p><i class="fa fa-check-circle text-primary me-3"></i>Ahorro de costos: Al invertir en soluciones informáticas profesionales, los clientes pueden ahorrar tiempo y dinero a largo plazo al evitar problemas costosos causados ​​por hardware o software obsoletos o infectados con virus o spyware.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i> Nuestro enfoque en proporcionar soluciones rápidas y efectivas significa que nuestros clientes pueden sentirse seguros de que sus necesidades serán atendidas de manera profesional y confiable.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i>nuestros clientes pueden estar seguros de que sus problemas serán resueltos de manera oportuna y eficiente. Esto significa que pueden volver a enfocarse en sus actividades diarias sin perder tiempo o energía en resolver problemas técnicos.</p>
-                        <a href="" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
+                        <a href="/computacion" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
                     </div>
                 </div>
                 <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
@@ -173,7 +173,7 @@
                         <p><i class="fa fa-check-circle text-primary me-3"></i> Ofrecemos sistemas de CCTV personalizados para satisfacer las necesidades específicas de su negocio o local.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i> Experiencia en seguridad y vigilancia: Contamos con profesionales altamente capacitados y con experiencia en seguridad y vigilancia para proporcionar soluciones confiables y eficientes.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i>Un CCTV puede ayudar a prevenir pérdidas en su negocio o local al disuadir a los delincuentes y detectar actividades sospechosas.</p>
-                        <a href="" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
+                        <a href="/camaras" class="btn btn-success rounded-pill py-3 px-5 mt-3">+ INFORMACIÓN</a>
                     </div>
                 </div>
             </div>

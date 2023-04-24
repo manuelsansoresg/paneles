@@ -3,23 +3,23 @@
    <div class="container">
         <div class="row mt-5">
             <div class="col-12">
-                <h2 class="text-primary text-center">PANELES SOLARES</h2>
+                <h2 class="text-primary text-center">Camaras</h2>
             </div>
-            @foreach ($panels as $key => $panel)
+            @foreach ($cameras as $key => $camera)
                <div class="col-12 col-md-4 mt-5">
                     <div class="card">
                         <div class="card-header text-center">
                             <h3>
-                                {{ $panel->name }}
+                                {{ $camera->name }}
                             </h3>
                         </div>
                         <div class="card-body">
-                            @if ($panel->image != '')
+                            @if ($camera->image != '')
                                <div class="text-center">
-                                    <img  src="{{ asset('products/'.$panel->image) }}" alt="">
+                                    <img  src="{{ asset('products/'.$camera->image) }}" alt="">
                                </div>
                             @endif
-                            <p class="card-text"> {!! $panel->description_short !!} </p>
+                            <p class="card-text"> {!! $camera->description_short !!} </p>
                             <div class="accordion" id="mi-acordeon">
                                 <div class="accordion-item">
                                   <h2 class="accordion-header" id="heading-1">
@@ -29,7 +29,7 @@
                                   </h2>
                                   <div id="collapse-{{ $key }}" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#mi-acordeon">
                                     <div class="accordion-body">
-                                        {!! $panel->description !!}
+                                        {!! $camera->description !!}
                                     </div>
                                   </div>
                                 </div>

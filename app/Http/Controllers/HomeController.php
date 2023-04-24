@@ -33,6 +33,19 @@ class HomeController extends Controller
         
         return view('paneles', compact('panels'));
     }
+    
+    public function camaras()
+    {
+        $cameras = Product::getActives(2);
+        
+        return view('cameras', compact('cameras'));
+    }
+    
+    public function computacion()
+    {
+        
+        return view('computacion');
+    }
 
     public function welcome()
     {

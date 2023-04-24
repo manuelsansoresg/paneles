@@ -10853,3 +10853,12 @@ textarea.form-control-lg {
   --bs-accordion-active-color: white !important;
   --bs-accordion-active-bg: #e7f1ff;
 }
+
+.highlight {
+  filter: brightness(70%);
+  transition: filter 0.5s ease;
+}
+
+.highlight:hover {
+  filter: brightness(100%);
+}

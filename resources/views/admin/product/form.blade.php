@@ -62,12 +62,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripción corta</label>
-                                <textarea name="data[description_short]" id="" cols="30" rows="4" class="form-control">{{ ($product != null) ? $product->description_short : null }}</textarea>
+                                <textarea name="data[description_short]" id="short-description" cols="30" rows="4" class="form-control ckeditor">{{ ($product != null) ? $product->description_short : null }}</textarea>
                             </div> 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripción</label>
-                                <textarea name="data[description]" id="" cols="30" rows="4" class="form-control">{{ ($product != null) ? $product->description : null }}</textarea>
+                                <textarea name="data[description]" id="description" cols="30" rows="4" class="form-control ckeditor">{{ ($product != null) ? $product->description : null }}</textarea>
                             </div> 
+                            @if ($product == null)
                             <div class="form-group">
                                 <label for="exampleInputEmail1">*Moneda</label>
                                 <select name="data[moneda_id]" id="" class="form-control" required>
@@ -80,6 +81,8 @@
                                 <label for="exampleInputEmail1">*Precio</label>
                                 <input type="number" class="form-control" name="data[price]" step="0.01" min="0"  placeholder="Escriba el nombre del producto" value="{{ ($product != null) ? $product->price / 100 : null }}" required>
                             </div>
+                            @endif
+                            
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Observaciones</label>
                                 <textarea name="data[observations]" id="" cols="30" rows="4" class="form-control">{{ ($product != null) ? $product->observations : null }}</textarea>

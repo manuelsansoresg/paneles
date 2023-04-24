@@ -7,3 +7,12 @@
 
 // Variables
 @import 'variables';
+
+.highlight {
+    filter: brightness(70%);
+    transition: filter 0.5s ease;
+}
+
+.highlight:hover {
+    filter: brightness(100%);
+}

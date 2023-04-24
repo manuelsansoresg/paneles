@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Lib\Banxico;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,7 +28,16 @@ class Product extends Model
     {
         $data = $request->data;
         $product_id = $request->product_id;
-        $data['price'] = $data['price'] * 100;
+        
+        if (isset($data['price'])) {
+            $data['price'] = $data['price'] * 100;
+        }
+
+        if (isset($data['moneda_id'])) {
+            $banxico = new Banxico();
+            $data['val_dolar'] = $banxico->getExchangeRate() * 100;
+        }
+
         if ($product_id == null) {
             $product =  new Product($data);
             $product->save();

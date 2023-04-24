@@ -19,6 +19,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/paneles', [App\Http\Controllers\HomeController::class, 'paneles'])->name('paneles');
+Route::get('/camaras', [App\Http\Controllers\HomeController::class, 'camaras'])->name('camaras');
+Route::get('/computacion', [App\Http\Controllers\HomeController::class, 'computacion'])->name('computacion');
 
 Route::post('/contact', [App\Http\Controllers\HomeController::class, 'contact']);
 

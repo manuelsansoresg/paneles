@@ -505,6 +505,21 @@ return [
                 ],
             ],
         ],
+        'Ckeditor' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://cdn.ckeditor.com/4.16.1/full-all/ckeditor.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://cdn.ckeditor.com/4.16.1/full-all/lang/es.js',
+                ],
+            ],
+        ],
         
         'Admin' => [
             'active' => true,

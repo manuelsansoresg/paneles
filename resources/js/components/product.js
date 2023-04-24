@@ -5,6 +5,18 @@ if (document.getElementById('frm-product')) {
     form_product.addEventListener('submit', (event) => {
       // Detener la presentación del formulario predeterminada
       event.preventDefault();
+
+      if (document.getElementById('short-description')) {
+        var short_desc = CKEDITOR.instances['short-description'].getData();
+        $('#short-description').val(short_desc);
+      }
+     
+      if (document.getElementById('description')) {
+        var desc = CKEDITOR.instances['description'].getData();
+        $('#description').val(desc);
+      }
+      
+      
     
       // Crear un objeto FormData para enviar el formulario
       const formData = new FormData(form_product);
@@ -69,4 +81,13 @@ if (document.getElementById('frm-product')) {
         });
     
     });
+}
+
+if (document.getElementById('modal-price')) {
+  window.modalPrice = function (product_id, moneda_id, price) {
+    $('#product_id').val(product_id);
+    $('#price').val(price);
+    $("#moneda_id option[value='" + moneda_id + "']").prop("selected", true);
+    $('#modal-price').modal('show');
+  }
 }
